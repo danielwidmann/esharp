@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Target\PC\Hal\HAL.c" />
+    <None Remove="Target\PC\Target-VS\%24NAME.c" />
+    <None Remove="Target\PC\Target-VS\ReadMe.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Target\PC\Hal\HAL.c" />
+    <EmbeddedResource Include="Target\PC\Target-VS\$NAME.c" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Target\PC\Target-VS\%24NAME.vcxproj" />
+    <EmbeddedResource Include="Target\PC\Target-VS\ReadMe.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ICSharpCode.Decompiler" Version="4.0.0.4319-beta2" />
+    <PackageReference Include="Mono.Cecil" Version="0.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ESharpCoreLib\ESharp.ClassLibrary.csproj" />
+  </ItemGroup>
+
+</Project>
